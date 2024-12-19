@@ -8,13 +8,7 @@ type CardType = "blue" | "white";
 const SellToUs: FC = () => {
   const getFaq = (subHeading: string, link: string) => (
     <div className="flex gap-1">
-      <Image
-        className="h-[15px] w-[15px] mt-[6px]"
-        src="/sellToUs/phone-ring-icon.png"
-        alt="phone-ring-icon"
-        width={20}
-        height={5}
-      />
+      <i className="si-file-text2"></i>
       <Link className="underline text-[16px] text-[#444444]" href={link}>
         {subHeading}
       </Link>
@@ -30,7 +24,7 @@ const SellToUs: FC = () => {
   ) => {
     if (cardType === "blue") {
       return (
-        <div className="bg-[#11355B] text-[#FFFFFF] border-[solid] border-[thin] border-[#C7C7C7] h-[300px] p-[45px] mb-[20px] flex flex-col justify-center items-center lg:w-[calc((100%-40px)/3)]">
+        <div className="bg-[#11355B] text-[#FFFFFF] border-[solid] border-[thin] border-[#C7C7C7] h-[220px] p-[20px] mb-[20px] flex flex-col justify-center items-center w-[46%] md:p-[45px] md:w-[calc((100%-40px)/3)] md:h-[300px]">
           <Image
             className="mb-[20px]"
             src={cardSrc}
@@ -38,13 +32,17 @@ const SellToUs: FC = () => {
             width={100}
             height={100}
           />
-          <div className="mb-[20px] font-semibold text-[17px]">{cardTitle}</div>
-          <div className="text-[15px] text-center">{cardSubTitle}</div>
+          <div className="font-semibold text-[17px] text-center md:mb-[20px]">
+            {cardTitle}
+          </div>
+          <div className="text-[15px] text-center hidden lg:block">
+            {cardSubTitle}
+          </div>
         </div>
       );
     }
     return (
-      <div className="border-[solid] border-[thin] border-[#C7C7C7] h-[300px] p-[45px] mb-[20px] flex flex-col justify-center items-center lg:w-[calc((100%-40px)/3)]">
+      <div className="border-[solid] border-[thin] border-[#C7C7C7] h-[220px] p-[20px] mb-[20px] flex flex-col justify-center items-center w-[46%] md:p-[45px] md:w-[calc((100%-40px)/3)] md:h-[300px]">
         <Image
           className="mb-[20px]"
           src={cardSrc}
@@ -52,22 +50,26 @@ const SellToUs: FC = () => {
           width={100}
           height={100}
         />
-        <div className="mb-[20px] font-semibold text-[17px]">{cardTitle}</div>
-        <div className="text-[15px] text-center">{cardSubTitle}</div>
+        <div className="font-semibold text-[17px] text-center md:mb-[20px]">
+          {cardTitle}
+        </div>
+        <div className="text-[15px] text-center hidden lg:block">
+          {cardSubTitle}
+        </div>
       </div>
     );
   };
 
   return (
-    <div className="w-full max-w-[1200px]">
-      <div className="pt-[35px] px-0 pb-[25px] text-center font-bold text-[33px]">
+    <div className="w-full max-w-[1200px] mx-[30px] md:mx-[0]">
+      <div className="pt-[35px] px-0  text-center font-bold text-[18px] md:text-[33px] md:pb-[25px] lg:text-[33px] lg:pb-[25px] xl:text-[33px] xl:pb-[25px]">
         Sell Your Gold and Silver Bullion
       </div>
 
-      <div className="flex mb-[30px] w-full border-[1px] border-[solid] border-[#ccc] pt-[30px] pl-[30px] pb-[20px] pr-[30px] flex-col sm:flex-row">
-        <div className="flex-[1_1_100%] flex flex-col items-center">
+      <div className="flex mb-[30px] w-full border-[solid] border-[#ccc] pt-[30px] pl-[30px] pb-[20px] pr-[30px] flex-col md:flex-row md:border-[1px] lg:flex-row xl:flex-row 2xl:flex-row">
+        <div className="flex-[1_1_100%] hidden flex-col items-center md:flex ">
           <Image
-            className=""
+            className="hidden md:block"
             src="/sellToUs/vsell-to-us.jpg"
             alt="SelltousIcon"
             width={260}
@@ -78,12 +80,12 @@ const SellToUs: FC = () => {
           </div>
         </div>
         <div className="text-[16px] flex flex-col items-center">
-          <div className="pb-[30px]">
+          <div className="md:pb-[30px]">
             JM Bullion is proud to offer the only do-it-yourself Sell-To-Us tool
             in the industry. That&apos;s right, you can lock in your price
             online 24/7 without ever speaking to our Sell-To-Us specialists.
           </div>
-          <div className="pb-[30px]">
+          <div className="pb-[30px] hidden md:block">
             The process is simple. First,{" "}
             <Link className="underline text-[#125ea7]" href="#">
               login
@@ -97,18 +99,24 @@ const SellToUs: FC = () => {
             sell, input your quantity, and fill out your information to complete
             the sale order.
           </div>
-          <div className="pt-[10px]">
-            <Link href=" https://www.jmbullion.com/my-account/buyback-products/">
-              <button className="h-[60px] text-[#7a4e00] font-bold cursor-pointer rounded-[4px] border-[solid] border-[thin] border-[#9B9B9B] bg-[linear-gradient(#FADB99,_#edbb56)] w-72 sm:w-[400px] hover:bg-[linear-gradient(#F7D185,_#EFC468)]">
+          <div className="pt-[10px] w-full flex justify-center">
+            <Link
+              href="/my-account/buyback-products/"
+              className="w-full flex justify-center"
+            >
+              <button className="text-[#7a4e00] font-bold cursor-pointer rounded-[4px] border-[solid] border-[thin] border-[#9B9B9B] bg-[linear-gradient(#FADB99,_#edbb56)] w-full h-[50px] md:w-[400px] md:h-[60px] lg:w-[400px] lg:h-[60px] xl:w-[400px] xl:h-[60px] 2xl:w-[400px] 2xl:h-[60px] hover:bg-[linear-gradient(#F7D185,_#EFC468)]">
                 Sell to Us Online
               </button>
             </Link>
           </div>
 
-          <div className="pt-[10px] font-semibold text-[18px]">
+          <div className="pt-[10px] font-semibold text-[18px] hidden md:block">
             Prefer to sell over the phone? No problem
           </div>
-          <div className="sm:flex gap-[30px] mx-[0] my-[0.6rem]">
+          <div className="text-[12px] w-full pt-1 md:hidden">
+            * Please note our minimum purchase amount is $1,000.
+          </div>
+          <div className="gap-[30px] mx-[0] my-[0.6rem] md:flex ">
             <div className="flex items-center gap-[15px]">
               <Image
                 className=""
@@ -144,99 +152,99 @@ const SellToUs: FC = () => {
         </div>
       </div>
 
-      <div className="flex flex-col items-center mb-[30px] w-full border-[1px] border-gray-300 p-[30px]">
+      <div className="flex flex-col items-center mb-[30px] w-full border-[1px] border-gray-300 p-[30px] bg-[#f8f8f8] md:bg-white">
         <div className="font-bold text-[25px] w-full text-center pb-[29px]">
           How it Works:
         </div>
-        <div className="flex items-center w-[72%]">
-          <div className="relative flex flex-col items-center">
+        <div className="md:flex md:ml-[30px] relative z-10">
+          <div className="flex flex-col items-center gap-[15px]">
             <div className="bg-[#f2c568] h-[48px] w-[48px] rounded-[50%] text-[#fff] text-[20px] flex justify-center items-center font-medium">
               1
             </div>
-            <div className="absolute top-1/2 w-full -z-10 h-1 bg-yellow-400 left-5"></div>
+            <div className="text-center text-[18px] font-bold md:text-[17px] md:font-semibold">
+              Get a Quote or Lock in a Price
+            </div>
+            <ul className="pr-[40px] pl-[40px]">
+              <li className="text-center md:hidden">
+                Use the Sell to Us Online button above to select the products
+                you want to sell. If you do not see your products listed, feel
+                free to email or call us. Once you are ready, checkout to lock
+                in your price.
+              </li>
+              <li className="list-disc mb-[10px] hidden md:list-item">
+                Use the Sell to Us Online button above to select the products
+                you want to sell.
+              </li>
+              <li className="list-disc mb-[10px] hidden md:list-item">
+                If you do not see your products listed, feel free to email or
+                call us.
+              </li>
+              <li className="list-disc mb-[10px] hidden md:list-item">
+                Once you are ready, checkout to lock in your price.
+              </li>
+            </ul>
           </div>
-
-          <div className="relative flex flex-col items-center w-full">
+          <div className="flex flex-col items-center gap-[15px]">
             <div className="bg-[#f2c568] h-[48px] w-[48px] rounded-[50%] text-[#fff] text-[20px] flex justify-center items-center font-medium">
               2
             </div>
-            <div className="absolute bg-[#f2c568] w-full h-[5px] top-2/4 -z-10"></div>
+            <div className="absolute bg-[#f2c568] h-[5px] -z-10 top-[22px] w-[66%] hidden md:block" />
+            <div className="text-center text-[18px] font-bold md:text-[17px] md:font-semibold">
+              Ship Your Products to Us
+            </div>
+            <ul className="pr-[40px] pl-[40px]">
+              <li className="text-center md:hidden">
+                Once you have locked in your sale, you will receive an email
+                with mailing instructions. Please follow the instructions
+                exactly to ensure safe arrival of your products.
+              </li>
+              <li className="list-disc mb-[10px] hidden md:list-item">
+                Once you have locked in your sale, you will receive an email
+                with mailing instructions.
+              </li>
+              <li className="list-disc mb-[10px] hidden md:list-item">
+                Please follow the instructions exactly to ensure safe arrival of
+                your products.
+              </li>
+            </ul>
           </div>
-
-          <div className="relative flex flex-col items-center">
+          <div className="flex flex-col items-center gap-[15px]">
             <div className="bg-[#f2c568] h-[48px] w-[48px] rounded-[50%] text-[#fff] text-[20px] flex justify-center items-center font-medium">
               3
             </div>
-          </div>
-        </div>
-        <div className="flex gap-[10px] pt-[20px] justify-around">
-          <div className="flex flex-col w-[28%]">
-            <div className="pb-[10px] text-center text-[17px] font-semibold">
-              Get a Quote or Lock in a Price
-            </div>
-            <div>
-              <ul>
-                <li className="list-disc mb-[10px]">
-                  Use the Sell to Us Online button above to select the products
-                  you want to sell.
-                </li>
-                <li className="list-disc mb-[10px]">
-                  If you do not see your products listed, feel free to email or
-                  call us.
-                </li>
-                <li className="list-disc mb-[10px]">
-                  Once you are ready, checkout to lock in your price.
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="flex flex-col w-[28%]">
-            <div className="pb-[10px] text-center text-[17px] font-semibold">
-              Ship Your Products to Us
-            </div>
-            <div>
-              <ul>
-                <li className="list-disc mb-[10px]">
-                  Once you have locked in your sale, you will receive an email
-                  with mailing instructions.
-                </li>
-                <li className="list-disc mb-[10px]">
-                  Please follow the instructions exactly to ensure safe arrival
-                  of your products.
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="flex flex-col w-[28%]">
-            <div className="pb-[10px] text-center text-[17px] font-semibold">
+            <div className="text-center text-[18px] font-bold md:text-[17px] md:font-semibold">
               Receive Payment
             </div>
-            <div>
-              <ul>
-                <li className="list-disc mb-[10px]">
-                  Once we receive your package, our inventory team will inspect
-                  each item and approve the sale.
-                </li>
-                <li className="list-disc mb-[10px]">
-                  After approval, your payment will be issued.
-                </li>
-              </ul>
-            </div>
+            <ul className="pr-[40px] pl-[40px]">
+              <li className="text-center md:hidden">
+                Use the Sell to Us Online button above to select the products
+                you want to sell. If you do not see your products listed, feel
+                free to email or call us. Once you are ready, checkout to lock
+                in your price.
+              </li>
+              <li className="list-disc mb-[10px] hidden md:list-item">
+                Once we receive your package, our inventory team will inspect
+                each item and approve the sale.
+              </li>
+              <li className="list-disc mb-[10px] hidden md:list-item">
+                After approval, your payment will be issued.
+              </li>
+            </ul>
           </div>
         </div>
       </div>
 
-      <div className="h-[343px] ml-[0] mr-[0] my-[30px] relative bg-[url('/sellToUs/gold-silver-jewelry.png')]">
+      <div className="h-[343px] my-[15px] relative bg-[url('/sellToUs/gold-silver-jewelry.png')] md:my-[30px]">
         <div className="bg-[linear-gradient(180deg,_rgba(0,_0,_0,_.7)_12.8%,_rgba(0,_0,_0,_.4)_48.81%,_rgba(0,_0,_0,_.6)_84.82%)] w-full h-full z-10 absolute"></div>
         <div className="w-full text-[#fff] absolute top-1/4 gap-[10px] flex flex-col items-center z-20">
-          <div className="m-0 font-[TrajanProBold] font-semibold md:text-[36px] sm: text-[20px]">
+          <div className="m-0 font-[TrajanProBold] font-semibold text-center text-[26px] md:text-[36px]">
             We Buy Jewelry, Scrap, and Silverware!
           </div>
-          <div className="italic font-normal md:text-[30px] sm:text-[15px]">
+          <div className="italic font-normal text-center text-[20px] md:text-[30px]">
             Free Insured Shipping & Returns
           </div>
-          <Link href="https://www.jmbullion.com/scrap-jewelry-silverware/">
-            <button className="ml-[auto] mr-[auto] my-[20px] px-[20px] py-[10px] text-[20px] text-[#7a4e00] font-bold cursor-pointer rounded-[4px] border-[solid] border-[thin] border-[#9B9B9B] bg-[linear-gradient(#FADB99,_#edbb56)] hover:bg-[linear-gradient(#F7D185,_#EFC468)]">
+          <Link href="/scrap-jewelry-silverware">
+            <button className="ml-[auto] mr-[auto] my-[20px] px-[20px] py-[10px] text-[20px] text-[#7a4e00] font-bold cursor-pointer rounded-[4px] border-[solid] border-[thin] border-[#9B9B9B] bg-[linear-gradient(#FADB99,_#edbb56)] hover:bg-[linear-gradient(#F7D185,_#EFC468)] w-60 leading-[20px] md:w-full md:h-[50px]">
               Click Here to Learn More
             </button>
           </Link>
@@ -244,11 +252,11 @@ const SellToUs: FC = () => {
       </div>
 
       <div>
-        <div className="text-[25px] font-bold text-center pb-[30px]">
+        <div className="text-lg font-bold text-center pb-[15px] md:text-[25px] md:pb-[30px]">
           Why Sell to JM Bullion
         </div>
         <div>
-          <div className="lg:flex gap-[20px]">
+          <div className="gap-[20px] flex flex-wrap justify-center">
             {getCard(
               "/sellToUs/vbb-leader.png",
               "vbb-leader",
@@ -270,8 +278,6 @@ const SellToUs: FC = () => {
               "We continually update our prices based on current marketconditions.",
               "blue"
             )}
-          </div>
-          <div className="lg:flex gap-[20px]">
             {getCard(
               "/sellToUs/vbb-shipping.png",
               "vbb-shipping",
@@ -298,11 +304,11 @@ const SellToUs: FC = () => {
       </div>
 
       <div>
-        <div className="font-bold text-[25px] px-[0] py-[30px] text-center">
+        <div className="font-bold text-[25px] px-[0] py-[10px] md:py-[30px] text-center">
           Sell-To-Us FAQ
         </div>
-        <div className="flex flex-col items-center sm:flex-row">
-          <div className="flex gap-[10px] flex-col  sm:flex-row sm:w-4/5">
+        <div className="flex flex-col items-center md:flex-row">
+          <div className="flex gap-[10px] flex-col md:flex-row">
             <div className="flex-[1_1_50%] flex flex-col gap-[10px]">
               {getFaq(
                 "What if I decide not to send in my items after locking in a price? Are there penalties or fees for that?",
@@ -348,9 +354,15 @@ const SellToUs: FC = () => {
               )}
             </div>
           </div>
-          <Link href="https://www.jmbullion.com/faq/">
+          <Link
+            className="w-[240px]  border-[solid] border-[#ccc] my-[20px] cursor-pointer md:border-[1px]"
+            href="/faq"
+          >
+            <div className="text-[#1f4167] flex text-[18px] font-bold justify-center no-underline md:hidden">
+              More Questions?
+            </div>
             <Image
-              className="w-[240px] border-[solid] border-[1px] border-[#ccc] mt-[10px] mb-[40px] cursor-pointer"
+              className="w-[240px] mb-[40px] cursor-pointer hidden md:block"
               src="/sellToUs/vsell-to-us-q.png"
               alt="vsell-to-us-q"
               width={100}

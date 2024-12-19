@@ -32,7 +32,7 @@ const SellToUs: FC = () => {
             width={100}
             height={100}
           />
-          <div className="font-semibold text-[17px] text-center md:mb-[20px]">
+          <div className="font-bold text-[18.75px] text-center md:mb-[20px]">
             {cardTitle}
           </div>
           <div className="text-[15px] text-center hidden lg:block">
@@ -50,7 +50,7 @@ const SellToUs: FC = () => {
           width={100}
           height={100}
         />
-        <div className="font-semibold text-[17px] text-center md:mb-[20px]">
+        <div className="font-bold text-[18.75px] text-center md:mb-[20px]">
           {cardTitle}
         </div>
         <div className="text-[15px] text-center hidden lg:block">
@@ -104,7 +104,7 @@ const SellToUs: FC = () => {
               href="/my-account/buyback-products/"
               className="w-full flex justify-center"
             >
-              <button className="text-[#7a4e00] font-bold cursor-pointer rounded-[4px] border-[solid] border-[thin] border-[#9B9B9B] bg-[linear-gradient(#FADB99,_#edbb56)] w-full h-[50px] md:w-[400px] md:h-[60px] lg:w-[400px] lg:h-[60px] xl:w-[400px] xl:h-[60px] 2xl:w-[400px] 2xl:h-[60px] hover:bg-[linear-gradient(#F7D185,_#EFC468)]">
+              <button className="text-[#7a4e00] font-bold cursor-pointer rounded-[4px] text-[18px] border-[solid] border-[thin] border-[#9B9B9B] bg-[linear-gradient(#FADB99,_#edbb56)] w-full h-[50px] md:w-[400px] md:h-[60px] lg:w-[400px] lg:h-[60px] xl:w-[400px] xl:h-[60px] 2xl:w-[400px] 2xl:h-[60px] hover:bg-[linear-gradient(#F7D185,_#EFC468)]">
                 Sell to Us Online
               </button>
             </Link>
@@ -127,13 +127,13 @@ const SellToUs: FC = () => {
               />
               <Link
                 href="tel:+18442582538"
-                className="underline text-[#114e88] font-semibold text-[18px]"
+                className="md:underline text-[#114e88] font-semibold text-[18px]"
               >
                 844-258-2538
               </Link>
             </div>
             <div className="sm:border-r border-gray-300" />
-            <div className="flex items-center gap-[15px] justify-center pt-[10px] md:pt-[0]">
+            <div className="flex items-center gap-[15px] justify-center pt-[5px] md:pt-[0]">
               <Image
                 className=""
                 src="/sellToUs/msg-icon.png"
@@ -143,7 +143,7 @@ const SellToUs: FC = () => {
               />
               <Link
                 href="mailto:selltous@jmbullion.com"
-                className="underline text-[#114e88] font-semibold text-[18px]"
+                className="md:underline text-[#114e88] font-semibold text-[18px]"
               >
                 SellToUs@jmbullion.com
               </Link>
@@ -191,7 +191,7 @@ const SellToUs: FC = () => {
             </div>
             <div className="absolute bg-[#f2c568] h-[5px] -z-10 top-[22px] w-[66%] hidden md:block" />
             <div className="text-center text-[18px] font-bold md:text-[17px] md:font-semibold">
-              Ship Your Products<span className="hidden md:inline">to Us</span>
+              Ship Your Products <span className="hidden md:inline">to Us</span>
             </div>
             <ul className="md:pr-[40px] md:pl-[40px]">
               <li className="text-center md:hidden">
@@ -237,14 +237,14 @@ const SellToUs: FC = () => {
       <div className="h-[275px] md:h-[343px] my-[10px] relative bg-cover bg-[url('/sellToUs/gold-silver-jewelry.png')] md:my-[30px]">
         <div className="bg-[linear-gradient(180deg,_rgba(0,_0,_0,_.7)_12.8%,_rgba(0,_0,_0,_.4)_48.81%,_rgba(0,_0,_0,_.6)_84.82%)] w-full h-full z-10 absolute"></div>
         <div className="w-full text-[#fff] absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2 gap-[10px] flex flex-col items-center z-20">
-          <div className="m-0 font-[TrajanProBold] font-semibold text-center text-[26px] md:text-[36px]">
+          <div className="m-0 font-[TrajanProBold] font-semibold text-center text-[22px] md:text-[36px]">
             We Buy Jewelry, Scrap, and Silverware!
           </div>
-          <div className="italic font-normal text-center text-[20px] md:text-[30px]">
+          <div className="italic font-normal text-center text-[18px] md:text-[30px]">
             Free Insured Shipping & Returns
           </div>
           <Link href="/scrap-jewelry-silverware">
-            <button className="ml-[auto] mr-[auto] my-[20px] px-[20px] py-[10px] text-[20px] text-[#7a4e00] font-bold cursor-pointer rounded-[4px] border-[solid] border-[thin] border-[#9B9B9B] bg-[linear-gradient(#FADB99,_#edbb56)] hover:bg-[linear-gradient(#F7D185,_#EFC468)] md:w-full md:h-[50px]">
+            <button className="ml-[auto] mr-[auto] my-[10px] px-[20px] py-[10px] text-[20px] text-[#7a4e00] font-bold cursor-pointer rounded-[4px] border-[solid] border-[thin] border-[#9B9B9B] bg-[linear-gradient(#FADB99,_#edbb56)] hover:bg-[linear-gradient(#F7D185,_#EFC468)] md:w-full md:h-[50px]">
               Click Here to Learn More
             </button>
           </Link>
@@ -348,12 +348,12 @@ const SellToUs: FC = () => {
       </div>
 
       <div>
-        <div className="font-bold text-[19px] md:text-[25px] px-[0] py-[10px] md:py-[30px] text-center">
+        <div className="font-bold text-[19px] md:text-[25px] pt-[18px] pb-[10px] py-[10px] md:pt-[30px] md:pb-[20px] text-center">
           Sell-To-Us FAQ
         </div>
         <div className="flex flex-col items-center md:flex-row">
-          <div className="flex gap-[10px] flex-col md:flex-row">
-            <div className="flex-[1_1_50%] flex flex-col gap-[10px]">
+          <div className="flex gap-[10px] flex-col pl-[30px] md:w-4/5 md:pl-[0] md:flex-row">
+            <div className="flex-[1_1_50%] flex flex-col md:gap-[10px]">
               {getFaq(
                 "What if I decide not to send in my items after locking in a price? Are there penalties or fees for that?",
                 "https://www.jmbullion.com/faq/decide-send-items-locking-price-penalties-fees-that/"
@@ -375,7 +375,7 @@ const SellToUs: FC = () => {
                 "https://www.jmbullion.com/faq/coin-bar-worth/"
               )}
             </div>
-            <div className="flex-[1_1_50%] flex flex-col gap-[10px]">
+            <div className="flex-[1_1_50%] flex flex-col md:gap-[10px]">
               {getFaq(
                 "Do you buy all types of coins and bullion?",
                 "https://www.jmbullion.com/faq/buy-types-coins-bullion/"
@@ -399,14 +399,14 @@ const SellToUs: FC = () => {
             </div>
           </div>
           <Link
-            className="w-[240px]  border-[solid] border-[#ccc] my-[20px] cursor-pointer md:border-[1px]"
+            className="w-[240px]  border-[solid] border-[#ccc] cursor-pointer md:border-[1px]"
             href="/faq"
           >
             <div className="text-[#1f4167] flex text-[18px] font-bold justify-center no-underline md:hidden">
               More Questions?
             </div>
             <Image
-              className="w-[240px] mb-[40px] cursor-pointer hidden md:block"
+              className="w-[240px] cursor-pointer hidden md:block"
               src="/sellToUs/vsell-to-us-q.png"
               alt="vsell-to-us-q"
               width={100}

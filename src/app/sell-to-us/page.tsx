@@ -24,9 +24,9 @@ const SellToUs: FC = () => {
   ) => {
     if (cardType === "blue") {
       return (
-        <div className="bg-[#11355B] text-[#FFFFFF] border-[solid] border-[thin] border-[#C7C7C7] h-[220px] p-[20px] mb-[20px] flex flex-col justify-center items-center w-[46%] md:p-[45px] md:w-[calc((100%-40px)/3)] md:h-[300px]">
+        <div className="bg-[#11355B] text-[#FFFFFF] border-[solid] border-[thin] border-[#C7C7C7] h-[170px] p-[10px] flex flex-col justify-center items-center w-[46%] md:p-[45px] md:w-[calc((100%-40px)/3)] md:h-[300px]">
           <Image
-            className="mb-[20px]"
+            className="mb-[15px] w-[70px] md:w-[100px]"
             src={cardSrc}
             alt={cardAlt}
             width={100}
@@ -42,9 +42,9 @@ const SellToUs: FC = () => {
       );
     }
     return (
-      <div className="border-[solid] border-[thin] border-[#C7C7C7] h-[220px] p-[20px] mb-[20px] flex flex-col justify-center items-center w-[46%] md:p-[45px] md:w-[calc((100%-40px)/3)] md:h-[300px]">
+      <div className="border-[solid] border-[thin] border-[#C7C7C7] h-[170px] p-[10px] flex flex-col justify-center items-center w-[46%] md:p-[45px] md:w-[calc((100%-40px)/3)] md:h-[300px]">
         <Image
-          className="mb-[20px]"
+          className="mb-[20px] w-[70px] md:w-[100px]"
           src={cardSrc}
           alt={cardAlt}
           width={100}
@@ -152,8 +152,8 @@ const SellToUs: FC = () => {
         </div>
       </div>
 
-      <div className="flex flex-col items-center mb-[30px] w-full border-[1px] border-gray-300 p-[30px] bg-[#f8f8f8] md:bg-white">
-        <div className="font-bold text-[25px] w-full text-center pb-[29px]">
+      <div className="flex flex-col items-center mb-[30px] w-full border-[1px] border-gray-300 px-[8px] py-[20px] md:p-[30px] bg-[#f8f8f8] md:bg-white">
+        <div className="font-bold text-[19px] pb-[15px] md:text-[25px] w-full text-center mb:pb-[29px]">
           How it Works:
         </div>
         <div className="md:flex md:ml-[30px] relative z-10">
@@ -162,9 +162,10 @@ const SellToUs: FC = () => {
               1
             </div>
             <div className="text-center text-[18px] font-bold md:text-[17px] md:font-semibold">
-              Get a Quote or Lock in a Price
+              <span className="hidden md:inline">Get a Quote or </span>Lock in a
+              Price
             </div>
-            <ul className="pr-[40px] pl-[40px]">
+            <ul className="md:pr-[40px] md:pl-[40px]">
               <li className="text-center md:hidden">
                 Use the Sell to Us Online button above to select the products
                 you want to sell. If you do not see your products listed, feel
@@ -190,9 +191,9 @@ const SellToUs: FC = () => {
             </div>
             <div className="absolute bg-[#f2c568] h-[5px] -z-10 top-[22px] w-[66%] hidden md:block" />
             <div className="text-center text-[18px] font-bold md:text-[17px] md:font-semibold">
-              Ship Your Products to Us
+              Ship Your Products<span className="hidden md:inline">to Us</span>
             </div>
-            <ul className="pr-[40px] pl-[40px]">
+            <ul className="md:pr-[40px] md:pl-[40px]">
               <li className="text-center md:hidden">
                 Once you have locked in your sale, you will receive an email
                 with mailing instructions. Please follow the instructions
@@ -213,14 +214,13 @@ const SellToUs: FC = () => {
               3
             </div>
             <div className="text-center text-[18px] font-bold md:text-[17px] md:font-semibold">
-              Receive Payment
+              Receive Payment<span className="md:hidden inline">!</span>
             </div>
-            <ul className="pr-[40px] pl-[40px]">
+            <ul className="md:pr-[40px] md:pl-[40px]">
               <li className="text-center md:hidden">
-                Use the Sell to Us Online button above to select the products
-                you want to sell. If you do not see your products listed, feel
-                free to email or call us. Once you are ready, checkout to lock
-                in your price.
+                Once we receive your package, our inventory team will inspect
+                each item and approve the sale. After approval, your payment
+                will be issued.
               </li>
               <li className="list-disc mb-[10px] hidden md:list-item">
                 Once we receive your package, our inventory team will inspect
@@ -234,7 +234,7 @@ const SellToUs: FC = () => {
         </div>
       </div>
 
-      <div className="h-[343px] my-[15px] relative bg-[url('/sellToUs/gold-silver-jewelry.png')] md:my-[30px]">
+      <div className="h-[343px] my-[10px] relative bg-[url('/sellToUs/gold-silver-jewelry.png')] md:my-[30px]">
         <div className="bg-[linear-gradient(180deg,_rgba(0,_0,_0,_.7)_12.8%,_rgba(0,_0,_0,_.4)_48.81%,_rgba(0,_0,_0,_.6)_84.82%)] w-full h-full z-10 absolute"></div>
         <div className="w-full text-[#fff] absolute top-1/4 gap-[10px] flex flex-col items-center z-20">
           <div className="m-0 font-[TrajanProBold] font-semibold text-center text-[26px] md:text-[36px]">
@@ -244,7 +244,7 @@ const SellToUs: FC = () => {
             Free Insured Shipping & Returns
           </div>
           <Link href="/scrap-jewelry-silverware">
-            <button className="ml-[auto] mr-[auto] my-[20px] px-[20px] py-[10px] text-[20px] text-[#7a4e00] font-bold cursor-pointer rounded-[4px] border-[solid] border-[thin] border-[#9B9B9B] bg-[linear-gradient(#FADB99,_#edbb56)] hover:bg-[linear-gradient(#F7D185,_#EFC468)] w-60 leading-[20px] md:w-full md:h-[50px]">
+            <button className="ml-[auto] mr-[auto] my-[20px] px-[20px] py-[10px] text-[20px] text-[#7a4e00] font-bold cursor-pointer rounded-[4px] border-[solid] border-[thin] border-[#9B9B9B] bg-[linear-gradient(#FADB99,_#edbb56)] hover:bg-[linear-gradient(#F7D185,_#EFC468)] md:w-full md:h-[50px]">
               Click Here to Learn More
             </button>
           </Link>
@@ -253,10 +253,54 @@ const SellToUs: FC = () => {
 
       <div>
         <div className="text-lg font-bold text-center pb-[15px] md:text-[25px] md:pb-[30px]">
-          Why Sell to JM Bullion
+          Why Sell to JM Bullion?
         </div>
         <div>
-          <div className="gap-[20px] flex flex-wrap justify-center">
+          <div className="gap-[10px] flex flex-wrap justify-center md:hidden">
+            {getCard(
+              "/sellToUs/vbb-leader.png",
+              "vbb-leader",
+              "Trusted Leader",
+              "We purchase tens of millions in product from our customers each month.",
+              "blue"
+            )}
+            {getCard(
+              "/sellToUs/vbb-pricing.png",
+              "vbb-pricing",
+              "Transparent Pricing",
+              "Our Sell-To-Us prices are clearly published on the website for a majority of our most popular products.",
+              "white"
+            )}
+            {getCard(
+              "/sellToUs/vbb-shipping.png",
+              "vbb-shipping",
+              "Easy Shipping",
+              "We provide shipping labels, and you can drop off your package at a facility or schedule a pickup. You can also choose to ship products on your own.",
+              "white"
+            )}
+            {getCard(
+              "/sellToUs/vbb-rates.png",
+              "vbb-rates",
+              "Industry Leading Rates",
+              "We continually update our prices based on current marketconditions.",
+              "blue"
+            )}
+            {getCard(
+              "/sellToUs/vbb-self.png",
+              "vbb-self",
+              "Do-It-Yourself",
+              "No need to speak with anyone. Sell instantly online 24/7.",
+              "blue"
+            )}
+            {getCard(
+              "/sellToUs/vbb-payment.png",
+              "vbb-payment",
+              "Quick Payment",
+              "Receive payment in 1-3 business days after products are authenticated.",
+              "white"
+            )}
+          </div>
+          <div className="gap-[20px] flex-wrap justify-center hidden md:flex ">
             {getCard(
               "/sellToUs/vbb-leader.png",
               "vbb-leader",
@@ -304,7 +348,7 @@ const SellToUs: FC = () => {
       </div>
 
       <div>
-        <div className="font-bold text-[25px] px-[0] py-[10px] md:py-[30px] text-center">
+        <div className="font-bold text-[19px] md:text-[25px] px-[0] py-[10px] md:py-[30px] text-center">
           Sell-To-Us FAQ
         </div>
         <div className="flex flex-col items-center md:flex-row">

@@ -61,7 +61,7 @@ const SellToUs: FC = () => {
   };
 
   return (
-    <div className="w-full max-w-[1200px] mx-[30px] md:mx-[0]">
+    <div className="w-full max-w-[1200px] mx-[25px] md:mx-[0]">
       <div className="pt-[35px] px-0  text-center font-bold text-[18px] md:text-[33px] md:pb-[25px] lg:text-[33px] lg:pb-[25px] xl:text-[33px] xl:pb-[25px]">
         Sell Your Gold and Silver Bullion
       </div>
@@ -234,9 +234,9 @@ const SellToUs: FC = () => {
         </div>
       </div>
 
-      <div className="h-[343px] my-[10px] relative bg-[url('/sellToUs/gold-silver-jewelry.png')] md:my-[30px]">
+      <div className="h-[275px] md:h-[343px] my-[10px] relative bg-cover bg-[url('/sellToUs/gold-silver-jewelry.png')] md:my-[30px]">
         <div className="bg-[linear-gradient(180deg,_rgba(0,_0,_0,_.7)_12.8%,_rgba(0,_0,_0,_.4)_48.81%,_rgba(0,_0,_0,_.6)_84.82%)] w-full h-full z-10 absolute"></div>
-        <div className="w-full text-[#fff] absolute top-1/4 gap-[10px] flex flex-col items-center z-20">
+        <div className="w-full text-[#fff] absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2 gap-[10px] flex flex-col items-center z-20">
           <div className="m-0 font-[TrajanProBold] font-semibold text-center text-[26px] md:text-[36px]">
             We Buy Jewelry, Scrap, and Silverware!
           </div>

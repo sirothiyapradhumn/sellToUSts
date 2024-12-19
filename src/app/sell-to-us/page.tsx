@@ -7,7 +7,7 @@ type CardType = "blue" | "white";
 
 const SellToUs: FC = () => {
   const getFaq = (subHeading: string, link: string) => (
-    <div className="flex gap-1">
+    <div className="list-disc list-item pb-[5px] md:flex">
       <i className="si-file-text2"></i>
       <Link className="underline text-[16px] text-[#444444]" href={link}>
         {subHeading}
@@ -66,7 +66,7 @@ const SellToUs: FC = () => {
         Sell Your Gold and Silver Bullion
       </div>
 
-      <div className="flex mb-[30px] w-full border-[solid] border-[#ccc] pt-[30px] pl-[30px] pb-[20px] pr-[30px] flex-col md:flex-row md:border-[1px] lg:flex-row xl:flex-row 2xl:flex-row">
+      <div className="flex md:mb-[30px] w-full border-[solid] border-[#ccc] pt-[15px]  mb:pt-[30px] mb:pl-[30px] pb-[20px] mb:pr-[30px] flex-col md:flex-row md:border-[1px] lg:flex-row xl:flex-row 2xl:flex-row">
         <div className="flex-[1_1_100%] hidden flex-col items-center md:flex ">
           <Image
             className="hidden md:block"
@@ -117,7 +117,7 @@ const SellToUs: FC = () => {
             * Please note our minimum purchase amount is $1,000.
           </div>
           <div className="gap-[30px] mx-[0] my-[0.6rem] md:flex ">
-            <div className="flex items-center gap-[15px]">
+            <div className="flex items-center gap-[15px] justify-center">
               <Image
                 className=""
                 src="/sellToUs/phone-ring-icon.png"
@@ -133,7 +133,7 @@ const SellToUs: FC = () => {
               </Link>
             </div>
             <div className="sm:border-r border-gray-300" />
-            <div className="flex items-center gap-[15px]">
+            <div className="flex items-center gap-[15px] justify-center pt-[10px] md:pt-[0]">
               <Image
                 className=""
                 src="/sellToUs/msg-icon.png"
@@ -184,7 +184,7 @@ const SellToUs: FC = () => {
               </li>
             </ul>
           </div>
-          <div className="flex flex-col items-center gap-[15px]">
+          <div className="flex flex-col items-center gap-[15px] pt-[20px] md:pt-[0]">
             <div className="bg-[#f2c568] h-[48px] w-[48px] rounded-[50%] text-[#fff] text-[20px] flex justify-center items-center font-medium">
               2
             </div>
@@ -208,7 +208,7 @@ const SellToUs: FC = () => {
               </li>
             </ul>
           </div>
-          <div className="flex flex-col items-center gap-[15px]">
+          <div className="flex flex-col items-center gap-[15px] pt-[20px] md:pt-[0]">
             <div className="bg-[#f2c568] h-[48px] w-[48px] rounded-[50%] text-[#fff] text-[20px] flex justify-center items-center font-medium">
               3
             </div>

@@ -67,9 +67,56 @@ const investCardData = [
   },
 ];
 
+interface ReviewModalProps {
+  onClose: () => void;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  reviewData: Array<Record<string, any>>;
+}
+
+const ReviewModal: FC<ReviewModalProps> = ({ onClose, reviewData }) => {
+  return (
+    <div className="fixed z-10 pt-[100px] top-[50px] left-2/4">
+      <div className="w-[400px] -ml-[200px] relative bg-[#fefefe] m-auto p-0 [box-shadow:0_4px_8px_0_rgba(0,_0,_0,_0.2),_0_6px_20px_0_rgba(0,_0,_0,_0.19)] [animation-name:animatetop] [animation-duration:0.4s]">
+        <div className="bg-[white] w-full flex justify-end">
+          <div
+            className="text-[16px] pr-[15px] pt-[11px] text-[black] cursor-pointer"
+            onClick={onClose}
+          >
+            x
+          </div>
+        </div>
+        <div className="max-h-[70vh] overflow-y-auto pt-[0] px-[30px] pb-[20px] w-full float-left bg-[#fff]">
+          {reviewData.map((item) => (
+            <div key={item.id}>
+              <div>
+                <Image
+                  className=""
+                  src="/starter/5-big-star.jpg"
+                  alt="5star"
+                  width={100}
+                  height={20}
+                />
+              </div>
+              <div>{item.revierName} from - {item.reviwerDate}</div>
+              <div>
+                &#34;
+                <p className="mb-[20px] font-normal text-[16px]">
+                  {item.review}
+                </p>
+                &#34;
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const StarterPack: FC = () => {
   const [pricing, setPricing] = useState(mockData.data.product.pricingTiers);
   const [reviews, setReviews] = useState(mockData.data.product.reviews);
+  const [modal, setModal] = useState(false);
 
   const getBannerSubDetails = (
     subHeading: string,
@@ -132,6 +179,12 @@ const StarterPack: FC = () => {
 
   return (
     <div className="w-full max-w-[1200px] md:border-[1px] border-solid border-[#ccc] px-[10px] md:px-[0px]">
+      {modal && (
+        <ReviewModal
+          onClose={() => setModal((prev) => !prev)}
+          reviewData={reviews.reviewData}
+        />
+      )}
       <div className="bg-[url('/starter/starter-banner.png')] w-full pl-[40px] pr-[40px] py-[6px] bg-no-repeat bg-scroll rounded-[4px] md:rounded-none">
         <div className="mx-[auto] my-[0] text-[#fff] text-center [text-shadow:1px_1px_1px_#000000] text-[15px] font-normal md:pt-[34px] md:pb-[47px] md:[font:38px_/_1_TrajanProBold]">
           Buy 10 Ounces of Silver at Spot Price!
@@ -209,7 +262,10 @@ const StarterPack: FC = () => {
                   width={120}
                   height={20}
                 />
-                <div className="text-[#125ea7] cursor-pointer">
+                <div
+                  className="text-[#125ea7] cursor-pointer"
+                  onClick={() => setModal((prev) => !prev)}
+                >
                   &#40;{reviews.totalReviews}&#41;
                 </div>
               </div>

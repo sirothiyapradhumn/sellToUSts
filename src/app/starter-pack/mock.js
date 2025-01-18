@@ -33,7 +33,7 @@ export const mockData = {
       ],
       reviews: {
         totalRatings: 0,
-        totalReviews: 0,
+        totalReviews: 127,
         averageRating: null,
         reviewData: [],
       },

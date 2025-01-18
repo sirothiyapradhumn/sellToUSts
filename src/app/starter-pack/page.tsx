@@ -1,7 +1,9 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
-// import Link from "next/link";
+import Link from "next/link";
 import { FC } from "react";
+import { mockData } from "./mock";
 
 const subBannerData = [
   {
@@ -66,6 +68,9 @@ const investCardData = [
 ];
 
 const StarterPack: FC = () => {
+  const [pricing, setPricing] = useState(mockData.data.product.pricingTiers);
+  const [reviews, setReviews] = useState(mockData.data.product.reviews);
+
   const getBannerSubDetails = (
     subHeading: string,
     imgStr: string,
@@ -89,7 +94,10 @@ const StarterPack: FC = () => {
     imgSrc: string,
     id: number
   ) => (
-    <div className="flex gap-[5px] justify-around py-[10px] border-[1px] border-[solid] border-[#d3d3d3] md:py-[0px] md:border-none md:justify-normal" key={id}>
+    <div
+      className="flex gap-[5px] justify-around py-[10px] border-[1px] border-[solid] border-[#d3d3d3] md:py-[0px] md:border-none md:justify-normal"
+      key={id}
+    >
       <div>
         <div className="text-[20px] font-bold pb-[17px] w-full m-0">
           {title}
@@ -100,7 +108,9 @@ const StarterPack: FC = () => {
               className="text-[#145891] font-semibold text-[15px] list-disc list-inside"
               key={index}
             >
-              {item}
+              <Link className="hover:underline" href="#">
+                {item}
+              </Link>
             </li>
           ))}
         </ul>
@@ -199,7 +209,9 @@ const StarterPack: FC = () => {
                   width={120}
                   height={20}
                 />
-                <div className="text-[#125ea7]">&#40;128&#41;</div>
+                <div className="text-[#125ea7] cursor-pointer">
+                  &#40;{reviews.totalReviews}&#41;
+                </div>
               </div>
               <button className="text-[12px] w-[130px] ml-[20px] bg-[#114e88] rounded-[5px] min-h-[35px] text-center border-[medium] border-[none] text-[white] font-bold hover:bg-[#12375c]">
                 Login to Review
@@ -228,20 +240,22 @@ const StarterPack: FC = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td className="text-[16px] font-normal text-center [border-right:1px_solid_#ccc]">
-                <span>1+</span>
-              </td>
-              <td className="text-[16px] font-normal text-center [border-right:1px_solid_#ccc]">
-                <span>$310.90</span>
-              </td>
-              <td className="text-[16px] font-normal text-center [border-right:1px_solid_#ccc]">
-                <span>$314.14</span>
-              </td>
-              <td className="text-[16px] font-normal text-center">
-                <span>$323.85</span>
-              </td>
-            </tr>
+            {pricing.map((itm) => (
+              <tr key={itm.quantityRange}>
+                <td className="text-[16px] font-normal text-center [border-right:1px_solid_#ccc]">
+                  <span>{itm.quantityRange}+</span>
+                </td>
+                <td className="text-[16px] font-normal text-center [border-right:1px_solid_#ccc]">
+                  <span>${itm.echeck}</span>
+                </td>
+                <td className="text-[16px] font-normal text-center [border-right:1px_solid_#ccc]">
+                  <span>${itm.crypto}</span>
+                </td>
+                <td className="text-[16px] font-normal text-center">
+                  <span>${itm.card}</span>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
         <div className="md:w-[390px] bg-[#f4f4f4] border-[1px] border-[solid] border-[#ccc] md:pl-[14px] md:pr-[14px] h-[fit-content] pt-[10px] pb-[20px]">
@@ -306,17 +320,19 @@ const StarterPack: FC = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td className="text-[16px] font-normal text-center [border-right:1px_solid_#ccc]">
-                  <span>$310.90</span>
-                </td>
-                <td className="text-[16px] font-normal text-center [border-right:1px_solid_#ccc]">
-                  <span>$314.14</span>
-                </td>
-                <td className="text-[16px] font-normal text-center">
-                  <span>$323.85</span>
-                </td>
-              </tr>
+              {pricing.map((itm) => (
+                <tr key={itm.quantityRange}>
+                  <td className="text-[16px] font-normal text-center [border-right:1px_solid_#ccc]">
+                    <span>${itm.echeck}</span>
+                  </td>
+                  <td className="text-[16px] font-normal text-center [border-right:1px_solid_#ccc]">
+                    <span>${itm.crypto}</span>
+                  </td>
+                  <td className="text-[16px] font-normal text-center">
+                    <span>${itm.card}</span>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
           <div className="text-center [border-bottom:1px_solid_#ccc] md:[border-bottom:none] px-[20px] py-[0] pb-[15px] md:px-[26px] md:py-[20px]">
